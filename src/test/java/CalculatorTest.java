@@ -1,5 +1,7 @@
 import org.junit.Assert;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 public class CalculatorTest {
     @Test
@@ -48,5 +50,34 @@ public class CalculatorTest {
         double actual = Calculator.getFibonaciNumber(10);
 
         Assert.assertEquals(expected, actual, 0.001);
+    }
+
+    /*--- try catch ---*/
+    @Test
+    public void divide_a10b0_IllegalArgumentExceptionTryCatch() {
+        try {
+            Calculator.divide(10,0);
+        } catch (IllegalArgumentException e) {
+            Assert.assertTrue(true);
+            return;
+        }
+
+        Assert.fail();
+    }
+
+    /*--- expected ---*/
+    @Test(expected = IllegalArgumentException.class)
+    public void divide_a10b0_IllegalArgumentExceptionExpected() {
+        Calculator.divide(10,0);
+    }
+
+    /*--- rule ---*/
+    @Rule
+    public ExpectedException rule = ExpectedException.none();
+
+    @Test
+    public void divide_a10b_0_IllegalArgumentExceptionRule() {
+        rule.expect(IllegalArgumentException.class);
+        Calculator.divide(10,0);
     }
 }
