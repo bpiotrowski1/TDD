@@ -16,6 +16,9 @@ public final class Calculator {
      * @param numberB Druga liczba wchodząca w skład działania
      * @return Różnica dwóch liczb
      */
+
+    public static int sum(int numberA, int numberB) { return numberA + numberB; }
+
     public static double substraction(double numberA, double numberB){
         return numberA - numberB;
     }
