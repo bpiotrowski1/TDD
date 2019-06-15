@@ -56,7 +56,7 @@ public class CalculatorTest {
     @Test
     public void divide_a10b0_IllegalArgumentExceptionTryCatch() {
         try {
-            Calculator.divide(10,0);
+            Calculator.divide(10, 0);
         } catch (IllegalArgumentException e) {
             Assert.assertTrue(true);
             return;
@@ -68,7 +68,7 @@ public class CalculatorTest {
     /*--- expected ---*/
     @Test(expected = IllegalArgumentException.class)
     public void divide_a10b0_IllegalArgumentExceptionExpected() {
-        Calculator.divide(10,0);
+        Calculator.divide(10, 0);
     }
 
     /*--- rule ---*/
@@ -78,6 +78,30 @@ public class CalculatorTest {
     @Test
     public void divide_a10b_0_IllegalArgumentExceptionRule() {
         rule.expect(IllegalArgumentException.class);
-        Calculator.divide(10,0);
+        Calculator.divide(10, 0);
+    }
+
+    /*--- LOGARYTM ---*/
+    @Test
+    public void log_a4x2_2() {
+        double expected = 2;
+        double acutal = Calculator.log(2, 4);
+
+        Assert.assertEquals(expected, acutal, 0.001);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void log_a_1_x5_IllegalArgumentExceptionExpected() {
+        Calculator.log(-1,5);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void log_a5_x_1_IllegalArgumentExceptionExpected() {
+        Calculator.log(5,-1);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void log_a1_x100_IllegalArgumentExceptionExpected() {
+        Calculator.log(1,100);
     }
 }
