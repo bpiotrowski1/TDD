@@ -41,4 +41,12 @@ public class CalculatorTest {
 
         Assert.assertEquals(expected, actual, 0.001);
     }
+
+    @Test
+    public void fibonacci_a10_55() {
+        double expected = 55;
+        double actual = Calculator.getFibonaciNumber(10);
+
+        Assert.assertEquals(expected, actual, 0.001);
+    }
 }
