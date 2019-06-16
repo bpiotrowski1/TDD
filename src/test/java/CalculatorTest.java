@@ -2,6 +2,9 @@ import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+import org.assertj.core.api.Assertions;
+
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class CalculatorTest {
     @Test
@@ -92,16 +95,38 @@ public class CalculatorTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void log_a_1_x5_IllegalArgumentExceptionExpected() {
-        Calculator.log(-1,5);
+        Calculator.log(-1, 5);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void log_a5_x_1_IllegalArgumentExceptionExpected() {
-        Calculator.log(5,-1);
+        Calculator.log(5, -1);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void log_a1_x100_IllegalArgumentExceptionExpected() {
-        Calculator.log(1,100);
+        Calculator.log(1, 100);
+    }
+
+    /*--- LAMBDA ---*/
+    @Test
+    public void log_a_3b10_IllegalArgumentExceptionMassageBaseOFLogarithmShouldBeGraterThan0() {
+        assertThatThrownBy(() -> {
+            Calculator.log(-3, 10);
+        }).hasMessage("a mniejsze od zero lub rowne 1");
+    }
+
+    @Test
+    public void log_a_1b10_IllegalArgumentExceptionMassageBaseOFLogarithmShouldNotBe1() {
+        assertThatThrownBy(() -> {
+            Calculator.log(1, 10);
+        }).hasMessage("a mniejsze od zero lub rowne 1");
+    }
+
+    @Test
+    public void log_a_3b10_IllegalArgumentExceptionMassageNumberShouldBeGraterThan0() {
+        assertThatThrownBy(() -> {
+            Calculator.log(2, -5);
+        }).hasMessage("a mniejsze od zero lub rowne 1");
     }
 }
