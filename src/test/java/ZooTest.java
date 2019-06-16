@@ -1,19 +1,35 @@
 import org.junit.Assert;
 import org.junit.Test;
 
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
 public class ZooTest {
     @Test
-    public void petTest() {
-        Pet p = new Pet();
-        p.setAge(2);
-        p.setHeight(10);
+    public void getPetNames_mockedPetWhichReturnTofikName_Tofik() {
+        String expected = "Tofik";
+        Pet mockedPet = mock(Pet.class);
+        when(mockedPet.getName()).thenReturn("Tofik");
+        Zoo zoo = new Zoo();
 
-        complexAssert(p);
+        zoo.giveHomelessPet(mockedPet);
+        String actual = zoo.getPetNames();
+
+        assertThat(expected).isEqualTo(actual);
     }
 
     @Test
-    public void complexAssert(Pet p) {
-        Assert.assertEquals(p.getAge(), 2);
-        Assert.assertEquals(p.getHeight(), 10);
+    public void getPetNames_mockedPetsWhichReturnsTafikAndTofik_FafikTofik() {
+        String expected = "Fafik, Tofik";
+        Pet mockedPet = mock(Pet.class);
+        when(mockedPet.getName()).thenReturn("Fafik").thenReturn("Tofik");
+        Zoo zoo = new Zoo();
+
+        zoo.giveHomelessPet(mockedPet);
+        zoo.giveHomelessPet(mockedPet);
+        String actual = zoo.getPetNames();
+
+        assertThat(expected).isEqualTo(actual);
     }
 }

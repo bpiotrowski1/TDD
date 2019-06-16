@@ -2,8 +2,8 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.mock;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.*;
 
 public class PetTest {
     private static Pet mockedPet;
@@ -34,5 +34,11 @@ public class PetTest {
     public void getHeight_mockedPet_callVerification() {
         mockedPet.getHeight();
         verify(mockedPet).getHeight();
+    }
+
+    @Test
+    public void getName_mockedPetWhichReturnsFafikName_Fafik() {
+        when(mockedPet.getName()).thenReturn("Fafik");
+        assertThat("Fafik").isEqualTo(mockedPet.getName());
     }
 }
