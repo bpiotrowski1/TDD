@@ -1,4 +1,3 @@
-import com.sun.tracing.dtrace.ProviderAttributes;
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
 import org.assertj.core.data.Offset;
@@ -234,5 +233,14 @@ public class CalculatorTest {
     @Parameters(source = DivideDataProvide.class)
     public void divide_paramizedByClass(double a, double b, double expected) {
         assertThat(expected).isEqualTo(Calculator.divide(a,b));
+    }
+
+    /*--- TDD ---*/
+    @Test
+    public void pow_a2_4() {
+        double expected = 8;
+        double actual = Calculator.pow2(2);
+
+        assertThat(expected).isEqualTo(actual);
     }
 }
