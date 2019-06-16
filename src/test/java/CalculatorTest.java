@@ -1,3 +1,4 @@
+import com.sun.tracing.dtrace.ProviderAttributes;
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
 import org.assertj.core.data.Offset;
@@ -184,5 +185,42 @@ public class CalculatorTest {
     @Test(expected = IllegalArgumentException.class)
     public void getFibonacciNumber_100_IllegalArgumentException() {
         Calculator.getFibonaciNumber(-100);
+    }
+
+    /*===*/
+    @Test
+    @Parameters(method = "getFibonacciData")
+    public void fibonacci_parametrizedByMethod(int n, int expected) {
+        assertThat(expected).isEqualTo(Calculator.getFibonaciNumber(n));
+    }
+
+    private Object[] getFibonacciData() {
+        return new Object[] {
+                new Object[]{0,0},
+                new Object[]{1,1},
+                new Object[]{2,1},
+                new Object[]{3,2},
+                new Object[]{4,3},
+                new Object[]{5,5},
+                new Object[]{6,8},
+                new Object[]{7,13},
+                new Object[]{8,21},
+                new Object[]{9,34},
+                new Object[]{10,55},
+        };
+    }
+
+    @Test
+    @Parameters(method = "getSumData")
+    public void sum_parametrizedByMethod(int a, int b, int expected) {
+        assertThat(expected).isEqualTo(Calculator.sum(a,b));
+    }
+
+    private Object[] getSumData() {
+        return new Object[] {
+            new Object[]{5,10,15},
+            new Object[]{500,5,505},
+            new Object[]{1000,1000,2000}
+        };
     }
 }

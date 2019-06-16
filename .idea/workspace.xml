@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d31af304-19bc-4d63-a170-26293b7bbb74" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/CalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CalculatorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ZooTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ZooTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -42,14 +37,16 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/CalculatorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="176" column="24" selection-start-line="176" selection-start-column="24" selection-end-line="176" selection-end-column="24" />
+            <state relative-caret-position="401">
+              <caret line="222" column="39" selection-start-line="222" selection-start-column="39" selection-end-line="222" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2430#2431#0" expanded="true" />
                 <element signature="e#2467#2468#0" expanded="true" />
                 <element signature="e#4552#4553#0" expanded="true" />
                 <element signature="e#4579#4580#0" expanded="true" />
+                <element signature="e#5235#5236#0" expanded="true" />
+                <element signature="e#5273#5274#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -226,12 +223,22 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CalculatorTest">
+  <component name="RunManager" selected="JUnit.CalculatorTest.sum_parametrizedByMethod">
     <configuration name="CalculatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TDDJavaGda26" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="CalculatorTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CalculatorTest.fibonacci_parametrizedByMethod" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TDDJavaGda26" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CalculatorTest" />
+      <option name="METHOD_NAME" value="fibonacci_parametrizedByMethod" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -256,21 +263,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CalculatorTest.substraction_parametrized" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CalculatorTest.sum_parametrizedByMethod" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TDDJavaGda26" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="CalculatorTest" />
-      <option name="METHOD_NAME" value="substraction_parametrized" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CalculatorTest.sum_parametrized" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TDDJavaGda26" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CalculatorTest" />
-      <option name="METHOD_NAME" value="sum_parametrized" />
+      <option name="METHOD_NAME" value="sum_parametrizedByMethod" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -278,11 +275,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CalculatorTest.sum_parametrizedByMethod" />
+        <item itemvalue="JUnit.CalculatorTest.fibonacci_parametrizedByMethod" />
         <item itemvalue="JUnit.CalculatorTest" />
         <item itemvalue="JUnit.CalculatorTest.getFibonacciNumber_100_IllegalArgumentException" />
         <item itemvalue="JUnit.CalculatorTest.fibonaci_parametrized" />
-        <item itemvalue="JUnit.CalculatorTest.substraction_parametrized" />
-        <item itemvalue="JUnit.CalculatorTest.sum_parametrized" />
       </list>
     </recent_temporary>
   </component>
@@ -300,15 +297,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CalculatorTest_suma_a5b10_15 - 2019.06.16 at 10h 17m 36s.xml">
-      <configuration name="CalculatorTest.suma_a5b10_15" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CalculatorTest_suma_a5b10_15 - 2019.06.16 at 10h 17m 58s.xml">
-      <configuration name="CalculatorTest.suma_a5b10_15" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CalculatorTest_odejmowanie_a15b5_10 - 2019.06.16 at 10h 19m 57s.xml">
-      <configuration name="CalculatorTest.odejmowanie_a15b5_10" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="CalculatorTest_odejmowanie_a15b5_10 - 2019.06.16 at 10h 25m 31s.xml">
       <configuration name="CalculatorTest.odejmowanie_a15b5_10" configurationId="JUnit" />
     </history-entry>
@@ -329,6 +317,15 @@
     </history-entry>
     <history-entry file="CalculatorTest_fibonaci_parametrized - 2019.06.16 at 11h 54m 59s.xml">
       <configuration name="CalculatorTest.fibonaci_parametrized" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CalculatorTest_getFibonacciNumber_100_IllegalArgumentException - 2019.06.16 at 11h 56m 28s.xml">
+      <configuration name="CalculatorTest.getFibonacciNumber_100_IllegalArgumentException" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CalculatorTest - 2019.06.16 at 11h 56m 39s.xml">
+      <configuration name="CalculatorTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CalculatorTest_fibonacci_parametrizedByMethod - 2019.06.16 at 12h 15m 59s.xml">
+      <configuration name="CalculatorTest.fibonacci_parametrizedByMethod" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -445,14 +442,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/CalculatorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="176" column="24" selection-start-line="176" selection-start-column="24" selection-end-line="176" selection-end-column="24" />
+        <state relative-caret-position="401">
+          <caret line="222" column="39" selection-start-line="222" selection-start-column="39" selection-end-line="222" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2430#2431#0" expanded="true" />
             <element signature="e#2467#2468#0" expanded="true" />
             <element signature="e#4552#4553#0" expanded="true" />
             <element signature="e#4579#4580#0" expanded="true" />
+            <element signature="e#5235#5236#0" expanded="true" />
+            <element signature="e#5273#5274#0" expanded="true" />
           </folding>
         </state>
       </provider>
