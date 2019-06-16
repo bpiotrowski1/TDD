@@ -70,7 +70,7 @@ public final class Calculator {
         return getFibonaciNumber(n - 1) + getFibonaciNumber(n - 2);
     }
 
-    public static double pow2(double i) {
-        return 0;
+    public static double pow2(double a) {
+        return a * a;
     }
 }

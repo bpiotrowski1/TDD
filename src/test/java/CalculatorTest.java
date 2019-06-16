@@ -238,7 +238,7 @@ public class CalculatorTest {
     /*--- TDD ---*/
     @Test
     public void pow_a2_4() {
-        double expected = 8;
+        double expected = 4;
         double actual = Calculator.pow2(2);
 
         assertThat(expected).isEqualTo(actual);
