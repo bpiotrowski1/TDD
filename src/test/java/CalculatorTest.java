@@ -1,11 +1,16 @@
+import junitparams.JUnitParamsRunner;
+import junitparams.Parameters;
+import org.assertj.core.data.Offset;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-import org.assertj.core.api.Assertions;
+import org.junit.runner.RunWith;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
+@RunWith(JUnitParamsRunner.class)
 public class CalculatorTest {
     @Test
     public void suma_a2b5_7() {
@@ -128,5 +133,56 @@ public class CalculatorTest {
         assertThatThrownBy(() -> {
             Calculator.log(2, -5);
         }).hasMessage("a mniejsze od zero lub rowne 1");
+    }
+
+    /*--- Assertj suma ---*/
+    @Test
+    public void log_a2b4_2() {
+        double expected = 2;
+        double actual = Calculator.log(2, 4);
+
+        assertThat(expected).isEqualTo(actual, Offset.strictOffset(0.01));
+    }
+
+    /*--- OFFSET ---*/
+    @Test
+    public void suma_a5b10_15() {
+        double expected = 15;
+        double actual = Calculator.sum(5, 10.0);
+
+        assertThat(expected).isEqualTo(actual, Offset.strictOffset(0.01));
+    }
+
+    @Test
+    public void odejmowanie_a15b5_10() {
+        double expected = 10;
+        double actual = Calculator.substraction(15,5);
+
+        assertThat(expected).isEqualTo(actual, Offset.strictOffset(0.01));
+    }
+
+    /*--- TESTY PARAMETRYCZNE ---*/
+    @Test
+    @Parameters({"5, 10, 15", "100, 500, 600"})
+    public void sum_parametrized(int a, int b, int expected) {
+        assertThat(expected).isEqualTo(Calculator.sum(a,b));
+    }
+
+    @Test
+    @Parameters({"5,15,-10","100, 50, 50"})
+    public void substraction_parametrized(double a, double b, double expected) {
+        assertThat(expected).isEqualTo(Calculator.substraction(a,b), Offset.strictOffset(0.001));
+    }
+
+    /*--- FIBONACCI ---*/
+    @Test
+    @Parameters({"1,1","2,1","3,2","4,3","5,5","6,8","7,13","8,21","9,34","10,55"})
+    public void fibonacci_parametrized(int n, int expected) {
+        assertThat(expected).isEqualTo(Calculator.getFibonaciNumber(n));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void getFibonacciNumber_100_IllegalArgumentException() {
+        Calculator.getFibonaciNumber(-100);
     }
 }
