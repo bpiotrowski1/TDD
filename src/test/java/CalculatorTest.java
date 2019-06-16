@@ -157,7 +157,7 @@ public class CalculatorTest {
     @Test
     public void odejmowanie_a15b5_10() {
         double expected = 10;
-        double actual = Calculator.substraction(15,5);
+        double actual = Calculator.substraction(15, 5);
 
         assertThat(expected).isEqualTo(actual, Offset.strictOffset(0.01));
     }
@@ -166,18 +166,18 @@ public class CalculatorTest {
     @Test
     @Parameters({"5, 10, 15", "100, 500, 600"})
     public void sum_parametrized(int a, int b, int expected) {
-        assertThat(expected).isEqualTo(Calculator.sum(a,b));
+        assertThat(expected).isEqualTo(Calculator.sum(a, b));
     }
 
     @Test
-    @Parameters({"5,15,-10","100, 50, 50"})
+    @Parameters({"5,15,-10", "100, 50, 50"})
     public void substraction_parametrized(double a, double b, double expected) {
-        assertThat(expected).isEqualTo(Calculator.substraction(a,b), Offset.strictOffset(0.001));
+        assertThat(expected).isEqualTo(Calculator.substraction(a, b), Offset.strictOffset(0.001));
     }
 
     /*--- FIBONACCI ---*/
     @Test
-    @Parameters({"1,1","2,1","3,2","4,3","5,5","6,8","7,13","8,21","9,34","10,55"})
+    @Parameters({"1,1", "2,1", "3,2", "4,3", "5,5", "6,8", "7,13", "8,21", "9,34", "10,55"})
     public void fibonacci_parametrized(int n, int expected) {
         assertThat(expected).isEqualTo(Calculator.getFibonaciNumber(n));
     }
@@ -195,32 +195,44 @@ public class CalculatorTest {
     }
 
     private Object[] getFibonacciData() {
-        return new Object[] {
-                new Object[]{0,0},
-                new Object[]{1,1},
-                new Object[]{2,1},
-                new Object[]{3,2},
-                new Object[]{4,3},
-                new Object[]{5,5},
-                new Object[]{6,8},
-                new Object[]{7,13},
-                new Object[]{8,21},
-                new Object[]{9,34},
-                new Object[]{10,55},
+        return new Object[]{
+                new Object[]{0, 0},
+                new Object[]{1, 1},
+                new Object[]{2, 1},
+                new Object[]{3, 2},
+                new Object[]{4, 3},
+                new Object[]{5, 5},
+                new Object[]{6, 8},
+                new Object[]{7, 13},
+                new Object[]{8, 21},
+                new Object[]{9, 34},
+                new Object[]{10, 55},
         };
     }
 
     @Test
     @Parameters(method = "getSumData")
     public void sum_parametrizedByMethod(int a, int b, int expected) {
-        assertThat(expected).isEqualTo(Calculator.sum(a,b));
+        assertThat(expected).isEqualTo(Calculator.sum(a, b));
     }
 
     private Object[] getSumData() {
-        return new Object[] {
-            new Object[]{5,10,15},
-            new Object[]{500,5,505},
-            new Object[]{1000,1000,2000}
+        return new Object[]{
+                new Object[]{5, 10, 15},
+                new Object[]{500, 5, 505},
+                new Object[]{1000, 1000, 2000}
         };
+    }
+
+    @Test
+    @Parameters(source = DifferenceDataProvide.class)
+    public void substraction_parametrizedByClass(double a, double b, double expected) {
+        assertThat(expected).isEqualTo(Calculator.substraction(a, b));
+    }
+
+    @Test
+    @Parameters(source = DivideDataProvide.class)
+    public void divide_paramizedByClass(double a, double b, double expected) {
+        assertThat(expected).isEqualTo(Calculator.divide(a,b));
     }
 }
