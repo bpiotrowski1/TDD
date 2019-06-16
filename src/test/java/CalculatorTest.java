@@ -9,6 +9,7 @@ import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.assertj.core.api.Assertions.extractProperty;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 @RunWith(JUnitParamsRunner.class)
@@ -234,5 +235,14 @@ public class CalculatorTest {
     @Parameters(source = DivideDataProvide.class)
     public void divide_paramizedByClass(double a, double b, double expected) {
         assertThat(expected).isEqualTo(Calculator.divide(a,b));
+    }
+
+    /*--- TDD ---*/
+    @Test
+    public void pow_a2b3_8() {
+        double expected = 8;
+        double actual = Calculator.pow(2,3);
+
+        assertThat(expected).isEqualTo(actual);
     }
 }
